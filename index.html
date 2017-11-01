@@ -78,29 +78,31 @@
         </div>
       </div> <!-- row -->
     </div>
-    <div class="projects pad">
+<div class="block">
+    <div class="projects pad ">
       <h1>Projects</h1>
       <div class="row">
-        <div class="col-sm-6 col-md-4" >
+        <div data-scroll="toggle(.fromBottomIn,.fromBottomOut )" class="col-sm-6 col-md-4" >
           <i class="fa fa-users" aria-hidden="true"></i>
           <p>lorem ipsum</p>
         </div>
-        <div class="col-sm-6 col-md-4" >
-          <i class="fa fa-users" aria-hidden="true"></i>
-          <p>lorem ipsum</p>
-        </div>
-
-        <div class="col-sm-6 col-md-4" >
+        <div data-scroll="toggle(.fromBottomIn,.fromBottomOut )"  class="col-sm-6 col-md-4" >
           <i class="fa fa-users" aria-hidden="true"></i>
           <p>lorem ipsum</p>
         </div>
 
-        <div class="  col-sm-6 col-md-4 " >
+        <div data-scroll="toggle(.fromBottomIn,.fromBottomOut )" class="col-sm-6 col-md-4" >
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <p>lorem ipsum</p>
+        </div>
+
+        <div data-scroll="toggle(.fromBottomIn,.fromBottomOut )" class="  col-sm-6 col-md-4 " >
           <div class="wrap-item">
             <i class="fa fa-users" aria-hidden="true"></i>
             <p>lorem ipsum</p>
           </div>
-
+          </div>
+<!--
         </div>
         <div class=" col-sm-6 col-md-4 " >
           <div class="wrap-item">
@@ -115,6 +117,7 @@
           </div>
         </div>
       </div> <!-- row -->
+      </div>
     </div>
     <div class="testomonials pad">
       <h1>testemonials</h1> <!-- include Comments -->
@@ -133,7 +136,31 @@
     <footer>
       <p>footer</p>
     </footer>
+    <div class="block">
+    	<h1 data-scroll="toggle(.fromTopIn, .fromTopOut)">CSS Animations</h1>
+    	<h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)" class="fromBottomIn">All animations are triggered by classes, so you can take advantage of the power that CSS3 animations give you.</h2>
+    </div>
   </div><!--container-fluid-->
+
+    <h1 data-scroll="toggle(.fromTopIn, .fromTopOut)">CSS Animations</h1>
+    <h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut)" >All animations are triggered by classes, so you can take advantage of the power that CSS3 animations give you.</h2>
+
   <script type="text/javascript" src="assets/js/script.js" ></script>
+  <script type="text/javascript" src="assets/js/ScrollTrigger.js" ></script>
+  <script>
+  window.counter = function() {
+  	// this refers to the html element with the data-scroll-showCallback tag
+  	var span = this.querySelector('span');
+  	var current = parseInt(span.textContent);
+
+  	span.textContent = current + 1;
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var trigger = new ScrollTrigger({
+  	  addHeight: true
+    });
+  });
+  </script>
   </body>
 </html>
